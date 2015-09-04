@@ -314,8 +314,9 @@ void playAnnotationVideo(){
 
         putText(frame,text,Point(30,30),CV_FONT_HERSHEY_COMPLEX,1,Scalar(0,0,255),5);
         imshow("videoAnnotationPlayer",frame);
-        imshow("foreground",foreground);
-        imshow("background",background);
+        if(foregroundShow) imshow("foreground",foreground);
+        if(backgroundShow) imshow("background",background);
+
         if(videoPlaySave&&VideoPos<=frameNumSave){
             char cstr[10];
             sprintf(cstr,"%08d",VideoPos);
